@@ -9,18 +9,26 @@
         </style>
     </head>
     <body>
-        <div style="background: #737373; padding: 4px">
+        <div style="background: #737373; padding: 4px;">
             <div style="margin: 4px">
-                <form>
-                    <select id="language-selector">
-                        <option>en</option>
-                        <option>de</option>
-                        <option>es</option>
-                        <option>ua</option>
-                        <option>ja</option>
-                        <option>az</option>
-                    </select>
-                </form>
+                
+                <div style="display: inline; float: right">
+                    <span><a href="https://www.npmjs.com/package/@inventivetalent/hi18n" target="_blank" style="text-decoration: none"><code>@inventivetalent/hi18n</code></a></span>
+                </div>
+
+                <div style="display: inline">
+                    <form style="margin-block-end:0">
+                        <select id="language-selector">
+                            <option>en</option>
+                            <option>de</option>
+                            <option>es</option>
+                            <option>ua</option>
+                            <option>ja</option>
+                            <option>az</option>
+                        </select>
+                    </form>
+                </div>
+
             </div>
         </div>
 
@@ -55,7 +63,10 @@
             <br/>
         </div>
 
-        <script src="../html-i18n/dist/bundle.js"></script>
+        <br/>
+
+
+        <script src="https://unpkg.com/@inventivetalent/hi18n@1.0.1/dist/bundle.js"></script>
         <script>
             console.log("hi")
             const i = new hi18n({
@@ -63,7 +74,7 @@
                 debug: true
             });
 
-            document.getElementById('language-selector').addEventListener('change',e=>{
+            document.getElementById('language-selector').addEventListener('change', e => {
                 e.preventDefault();
                 i.language = e.currentTarget.value;
             })
